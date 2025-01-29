@@ -1,9 +1,9 @@
 # Compiled class file
 *.class
-
 # Log file
 *.log
-
+.idea
+m2-estore-pojo-me.iml
 # BlueJ files
 *.ctxt
 
