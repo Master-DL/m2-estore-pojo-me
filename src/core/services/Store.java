@@ -8,12 +8,13 @@ import java.util.Set;
 	import core.data.Cart;
 	import core.data.ItemInStock;
 	import core.data.Order;
+	import core.services.interfaces.StoreInterface;
 	import estorePojo.exceptions.InsufficientBalanceException;
 import estorePojo.exceptions.InvalidCartException;
 import estorePojo.exceptions.UnknownAccountException;
 import estorePojo.exceptions.UnknownItemException;
 
-public class Store {
+public class Store implements StoreInterface {
 
 	    private Provider provider;
 	    private Bank bank;

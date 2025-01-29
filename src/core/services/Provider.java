@@ -3,9 +3,11 @@ package core.services;
 import java.util.HashMap;
 import java.util.Map;
 
+import core.services.interfaces.ProviderInterface;
+import core.services.interfaces.StoreInterface;
 import estorePojo.exceptions.UnknownItemException;
 
-public class Provider {
+public class Provider implements ProviderInterface {
 
 	private Map<String, Double> itemPrices = new HashMap<>();
 
@@ -41,7 +43,7 @@ public class Provider {
 	 * @param qty   the quantity ordered
 	 * @return the delay (in hours)
 	 */
-	public int order(Store store, Object item, int qty) throws UnknownItemException {
+	public int order(StoreInterface store, Object item, int qty) throws UnknownItemException {
 
 		if (!itemPrices.containsKey(item))
 			throw new UnknownItemException("Item " + item + " is not an item delivered by this provider.");
