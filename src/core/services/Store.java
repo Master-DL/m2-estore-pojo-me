@@ -8,6 +8,8 @@ import java.util.Set;
 	import core.data.Cart;
 	import core.data.ItemInStock;
 	import core.data.Order;
+	import core.services.interfaces.BankInterface;
+	import core.services.interfaces.ProviderInterface;
 	import core.services.interfaces.StoreInterface;
 	import estorePojo.exceptions.InsufficientBalanceException;
 import estorePojo.exceptions.InvalidCartException;
@@ -16,13 +18,13 @@ import estorePojo.exceptions.UnknownItemException;
 
 public class Store implements StoreInterface {
 
-	    private Provider provider;
-	    private Bank bank;
+	    private ProviderInterface provider;
+	    private BankInterface bank;
 
 	    /**
 	     * Constructs a new StoreImpl
 	     */
-	    public Store(Provider prov, Bank bk) {
+	    public Store(ProviderInterface prov, BankInterface bk) {
 	        provider = prov;
 	        bank = bk;
 	    }
